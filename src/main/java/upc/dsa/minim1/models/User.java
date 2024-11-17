@@ -7,26 +7,22 @@ public class User {
     String name;
     String sname;
     String mail;
-    Date date;
+    String date;
 
     public User() {
         this.setIdU(RandomUtils.getId());
     }
 
-    public User(String name, String sname, String mail, Date date) {
-        this.idU= null;
-        this.name = name;
-        this.sname = sname;
-        this.mail = mail;
-        this.date = date;
+    public User(String name, String sname, String mail, String date) {
+        this(null,name,sname,mail,date);
     }
 
-    public User(String idU, String name, String sname, String mail, Date date) {
+    public User(String idU, String name, String sname, String mail, String date) {
         if(idU != null) this.setIdU(idU);
-        this.name = name;
-        this.sname = sname;
-        this.mail = mail;
-        this.date = date;
+        setName(name);
+        setSname(sname);
+        setMail(mail);
+        setDate(date);
     }
 
 
@@ -62,16 +58,16 @@ public class User {
         this.mail = mail;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "Track [id="+idU+", nombre=" + name + ", apellido=" + sname +", email="+ mail+ "fecha nacimiento = "+ date +"]";
+        return "User [id="+idU+", nombre=" + name + ", apellido=" + sname +", email="+ mail+ ", fecha nacimiento = "+ date +"]";
     }
 }
